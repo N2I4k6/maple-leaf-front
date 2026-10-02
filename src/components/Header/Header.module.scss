@@ -1,0 +1,71 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: var(--ml-bg);
+  border-bottom: 2px solid var(--ml-border);
+  box-shadow: var(--ml-shadow);
+  backdrop-filter: blur(8px);
+  transition: background $transition, border-color $transition;
+
+  @include mobile {
+    padding: 10px 12px;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--ml-primary);
+  transition: transform $transition;
+
+  &:hover { transform: scale(1.03); }
+
+  @include mobile { font-size: 18px; }
+}
+
+.logo {
+  font-size: 28px;
+  filter: drop-shadow(0 2px 4px rgba(200, 16, 46, 0.4));
+
+  @include mobile { font-size: 22px; }
+}
+
+.title {
+  background: linear-gradient(135deg, var(--ml-primary), var(--ml-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  :global(.ant-btn) {
+    border-radius: 10px;
+    font-weight: 600;
+    border-width: 2px;
+  }
+
+  @include mobile {
+    gap: 6px;
+    :global(.ant-btn) {
+      padding: 4px 10px;
+      font-size: 13px;
+    }
+  }
+}

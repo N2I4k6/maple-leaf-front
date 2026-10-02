@@ -1,0 +1,18 @@
+.toggle {
+    width: 42px;
+    height: 40px;
+    font-size: 18px;
+    border: 2px solid var(--ml-border-strong) !important;
+    background: var(--ml-surface) !important;
+    color: var(--ml-text) !important;
+    border-radius: 10px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+  
+    &:hover {
+      background: var(--ml-surface-hover) !important;
+      border-color: var(--ml-accent) !important;
+    }
+  }

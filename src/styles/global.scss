@@ -1,0 +1,58 @@
+@use './variables' as *;
+
+:root,
+:root[data-theme='light'] {
+  --ml-bg:            #{$bg};
+  --ml-surface:       #{$surface};
+  --ml-surface-hover: #{$surface-hover};
+  --ml-text:          #{$text};
+  --ml-text-muted:    #{$text-muted};
+  --ml-border:        #{$border};
+  --ml-border-strong: #{$border-strong};
+  --ml-primary:       #{$maple-red};
+  --ml-accent:        #{$maple-orange};
+  --ml-amber:         #{$maple-amber};
+  --ml-shadow:        #{$shadow};
+}
+
+:root[data-theme='dark'] {
+  --ml-bg:            #1A0F0A;
+  --ml-surface:       #2A1810;
+  --ml-surface-hover: #3A2218;
+  --ml-text:          #F5E6DC;
+  --ml-text-muted:    #B39A8C;
+  --ml-border:        #5C3A28;
+  --ml-border-strong: #8B0000;
+  --ml-primary:       #8B0000;
+  --ml-accent:        #A63A00;
+  --ml-amber:         #B8720A;
+  --ml-shadow:        0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--ml-bg);
+  color: var(--ml-text);
+  transition: background $transition, color $transition;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.ant-btn-primary {
+  background: var(--ml-primary) !important;
+  border-color: var(--ml-primary) !important;
+  &:hover { background: var(--ml-accent) !important; border-color: var(--ml-accent) !important; }
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--ml-primary) !important;
+}
+.ant-tabs-ink-bar { background: var(--ml-primary) !important; }

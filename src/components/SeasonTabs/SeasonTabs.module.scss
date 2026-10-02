@@ -1,0 +1,40 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+
+  &::-webkit-scrollbar { height: 6px; }
+  &::-webkit-scrollbar-thumb {
+    background: var(--ml-border);
+    border-radius: 3px;
+  }
+}
+
+.tab {
+  flex-shrink: 0;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 2px solid var(--ml-border);
+  background: var(--ml-surface);
+  color: var(--ml-text);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all $transition;
+
+  &:hover {
+    border-color: var(--ml-border-strong);
+    background: var(--ml-surface-hover);
+  }
+
+  &.active {
+    background: linear-gradient(135deg, var(--ml-primary), var(--ml-accent));
+    border-color: var(--ml-primary);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(200, 16, 46, 0.35);
+  }
+}

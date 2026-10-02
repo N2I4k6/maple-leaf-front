@@ -1,0 +1,31 @@
+@use 'sass:color';
+@use '@/styles/variables' as *;
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+  border: 2px solid;
+}
+
+.high {
+  color: #fff;
+  background: linear-gradient(135deg, #{$maple-red}, #{$maple-orange});
+  border-color: $maple-red;
+}
+
+.mid {
+  color: #fff;
+  background: $maple-amber;
+  border-color: color.adjust($maple-amber, $lightness: -10%);
+}
+
+.low {
+  color: #fff;
+  background: #9c6b4a;
+  border-color: #7a5338;
+}
